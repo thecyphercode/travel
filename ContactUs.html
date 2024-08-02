@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body, html {
+            margin: 0px !important;
+            padding: 0px !important;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .bg-aboutimg {
+            background-image: url('img/cntctUs/Rectangle 45.png');
+            width: 100%;
+            height: 780px;
+            background-size: cover;
+            margin-top: -180px;
+            display: flex;
+            align-items: center;
+            
+        }
+        firstButton{
+            text-align: center;
+            font-size: 22px;
+            font-weight: 400;
+            
+        }
+
+        .about-box , button{
+            margin-top: 10px;
+            height: 50px;
+            width: 160px;
+            background:linear-gradient(to top right, #ffffff65,#ffffff4f, #ffffff68);
+            border: 1.5px solid #dddddd50;
+            color: white;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+
+        }
+         button{
+            margin-top: 20px;
+            height: 50px;
+            width: 220px;
+         }
+        .ContactUsPage {
+            margin-top: 40px;
+        }
+        .ContactUsPage p{
+            color: black;
+        }
+        h1{
+            margin-top: 20px;
+            font-size: 50px;
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+        .navbar {
+            position: relative;
+        }
+
+        .nav-bg {
+            background-color: rgba(25, 24, 24, 0.1);
+            -webkit-blend-mode: overlay;
+        }
+
+        .navbar-toggler {
+            background-color: #11111147;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        .btn-close {
+            background-color: #545353;
+            color: #f1f1f1 !important;
+            opacity: 1;
+            font-size: 1.2rem;
+            
+        }
+
+        .btn-close:focus,
+        .btn-close:hover {
+            background-color: #e64a19;
+        }
+
+        .hedbox {
+            border: 2px solid #f1f1f1;
+            height: 60px;
+            width: 250px;
+            font-size: 22px;
+            background: linear-gradient(90deg, rgba(65, 65, 66, 0.1) 0%, rgba(44, 44, 45, 0.8) 35%, rgba(65, 65, 66, 0.8) 100%);
+            margin-top: 15px;
+            text-align: center;
+            border-radius: 30px;
+            mix-blend-mode: multiply;
+        }
+
+        .ctnrSection2 {
+            flex-direction: column;
+            justify-content: center; /* Centers content horizontally */
+            align-items: center; /* Aligns content to the start of the flex container vertically */
+            margin-top: 0;
+            padding: 0px !important;
+            width: 100%;
+            height: 100%;
+        }
+        .containerI{
+            background-color: black;
+            border-radius: 5px;
+            width: 90%;
+            height: 100%;
+            margin: 0 auto;
+            
+        }
+
+        .ContactUsPage {
+            margin-top: 40px;
+        }
+        .ContactUsPage p{
+            color: black;
+        }
+
+        
+
+
+        .container1 {
+            padding-top: 60px;
+            padding-left: 40px;
+            width: 40%;
+            height: 480px;
+            position: relative; /* Ensure positioning context for the pseudo-element */
+        }
+
+        .container1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1.5px; /* Width of the gradient border */
+            height: 100%;
+            background: linear-gradient(to top, #000000, #f4b40080, #000000); /* Gradient colors */
+        }
+
+        .container1 p{
+            color: #ffffff99;
+            font-size: 14px;
+            font-weight: 100;
+        }
+        h4{
+           line-height: 30px;
+           letter-spacing: .5px;
+           color: rgb(255, 255, 255);
+           font-weight: 500;
+           font-size: 20px;
+        }
+        .container2{
+            padding-top: 60px;
+            padding-left: 40px;
+            padding-right: 50px;
+            width: 60%;
+            height: 480px;
+            
+        }
+       .text-field {
+
+            background-color: black;
+            border: 1px solid #ffffff90; /* Border color */
+            width: 100%; 
+            height: 150px;/* Make the text field take up the full width of the container */
+            padding: 10px; /* Add padding inside the text field */
+            border-radius: 05px; /* Rounded corners */
+            font-size: 16px; /* Adjust the font size */
+            box-sizing: border-box; /* Ensure padding and border are included in the element's total width */
+        }
+        .label-text {
+            margin-top: 30px;
+            margin-bottom: 15px; /* Space between label and input */
+            color: #ffffff99;
+            font-size: 14px;
+            font-weight: 100;
+        }
+        .text-field2, .text-field3  {
+            background-color: black;
+            border: 1px solid #ffffff90; /* Border color */
+            width: 100%; 
+            padding: 10px; /* Add padding inside the text field */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Adjust the font size */
+            box-sizing: border-box; /* Ensure padding and border are included in the element's total width */
+            color: white; /* Text color */
+            text-align: left; /* Align text to the left (default) */
+            font-weight: 400; /* Normal font weight */
+        }
+
+        /* Styling the placeholder text */
+        .text-field2::placeholder, .text-field3::placeholder {
+            color: #ffffff; 
+        }
+        .text-field2:focus, .text-field3:focus {
+            border-color: #f4b400; /* Change border color on focus */
+            outline: none; /* Remove default outline */
+        }
+
+
+        .label-text2, .label-text3 {
+            
+            margin-bottom: 15px; 
+            color: #ffffff99;
+            font-size: 14px;
+            font-weight: 100;
+        }
+        .container2 button{
+            margin-top: 30px;
+            color: #000000;
+            background-color: white;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+       
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 0;
+        }
+
+        
+        @media (max-width: 576px) {
+            .ctnrSection2 {
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+            }
+            .containerI{
+                
+                background-color: black;
+                border-radius: 0px;
+                width: 100%;
+                height: 100%;
+            }
+            .ContactUsPage {
+                margin-top: 0px;
+            }
+            .container1{
+                padding-top: 60px;
+                padding-left: 40px;
+                padding-right: 40px;
+                width: 100%;
+                height: 40%;
+                position: relative;/* Ensure positioning context for the pseudo-element */
+                
+            }
+            .container1::before {
+                display: none;
+            }
+            .container2{
+                padding-top: 40px;
+                padding-left: 40px;
+                padding-right: 40px;
+                width: 100%;
+                height: 60%;
+                margin: 0 auto;
+            }
+            .label-text3{
+                margin-top: 30px;
+            }
+            .container2 button{
+                margin-top: 30px;
+                margin-bottom: 30px;
+                color: #000000;
+                background-color: #ffffff;
+                border-radius: 5px;
+                width: 100%;
+            }
+
+            iframe {
+                display: none;
+            }
+        }
+    
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="img/Tripcierge 1.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end nav-bg" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+
+                    <div class="offcanvas-body m-auto">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 m-auto">
+                            <li class="nav-item hedbox">
+                                <a class="nav-link text-white fs-18" href="#">Home</a>
+                            </li>
+                            <li class="nav-item hedbox">
+                                <a class="nav-link text-white fs-18" href="#">About Us</a>
+                            </li>
+                            <li class="nav-item hedbox">
+                                <a class="nav-link text-white fs-18" href="#">Destination</a>
+                            </li>
+                            <li class="nav-item hedbox">
+                                <a class="nav-link text-white fs-18" href="#">Blog/Vlog</a>
+                            </li>
+                            <li class="nav-item hedbox">
+                                <a class="nav-link text-white fs-18" href="#">Contact Us</a>
+                            </li>
+                            <li class="nav-item hedbox">
+                                <a class="nav-link text-white fs-18" href="#">Plan your Trip</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+
+    <section>
+        <div class="container-fluid bg-aboutimg">
+            <div class="container ">
+                <div class="about-box ">
+                    <firstButton>Contact Us</firstButton>
+                </div>
+                <h1 style="width: 28%;">
+                    Contact us &
+                    get special
+                    Consultation
+                </h1>
+                <button> <firstButton> Let's Plan Now</firstButton></button>
+            </div>
+        </div>
+    </section>
+   
+
+
+    <section>
+        <div class="container-fluid ctnrSection2">
+            <div class="containerI" >
+                <div class="row ContactUsPage">
+                    
+                        <div class="container1">
+                            <p>OFFICE ADDRESS</p>
+                            <h4>214, Sun Orbit, 2nd Floor, Rajpath Rangoli Road, Bodakdev, Ahmedabad 380054, Gujarat, India</h4>
+                            <p style="margin-top: 35px;">OFFICE PHONE NUMBER</p>
+                            <h4>+91 9099253687</h4>
+                            <p style="margin-top: 35px;">EMAIL ADDRESS</p>
+                            <h4>disha@tripcierge.in</h4>
+                        </div> 
+                   
+
+                    
+                        <div class="container2">
+                           
+                            <div class="row forInput">
+                                <div class="col-md-6 ">
+                                    <label for="name" class="label-text2">NAME</label>
+                                    <input type="text" id="name" class="text-field2">
+                                </div> 
+                                <div class="col-md-6 ">
+                                    <label for="email" class="label-text3">EMAIL ADDRESS</label>
+                                    <input type="text" id="email" class="text-field3">
+                                </div> 
+                            </div> 
+
+                            <label for="query" class="label-text">DROP YOUR QUERY HERE</label>
+                            <input type="text" id="query" class="text-field">
+
+                            <button>SEND MESSAGE</button>
+
+                        </div> 
+                    
+
+                </div>
+            </div>
+                
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d117479.15998265317!2d72.55162866796866!3d23.052257150959054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sjio%20mart%20map!5e0!3m2!1sen!2sin!4v1670416973548!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+        </div>
+    </section>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    
+</body>
+
+</html>
