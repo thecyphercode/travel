@@ -8,7 +8,7 @@
         body {
             margin: 0;
             height: 100vh;
-            background: url('imagees/globeBgImg.jpg') no-repeat center center fixed;
+            background: url('img/globeBgImg.jpg') no-repeat center center fixed;
             background-size: cover;
         }
         .container {
@@ -146,11 +146,11 @@
             </ul>
         </div>
        
-        <model-viewer id="globe" src="imagees/earth_globe4mb.glb" alt="Earth 3D model" 
+        <model-viewer id="globe" src="3dModel/earth_globe4mb.glb" alt="Earth 3D model" 
             scale="1 1 1"
             shadow-intensity=".5"
-            field-of-view="10deg"
-            min-camera-orbit="auto -100deg"
+            field-of-view="08deg"
+            min-camera-orbit="auto -290deg"
             max-camera-orbit="auto 290deg">
         </model-viewer>
     </div>
@@ -160,20 +160,20 @@
             const globe = document.getElementById('globe');
             const defaultOrbit = '0deg 0deg'; 
             let targetOrbit = '';
-            let targetFov = '10deg'; // Default field of view
+            let targetFov = '08deg'; // Default field of view
 
             switch (continent) {
                 case 'Asia':
                     targetOrbit = '65deg 60deg';
-                    targetFov = '25deg'; // Adjust these values for zoom
+                    targetFov = '15deg'; // Adjust these values for zoom
                     break;
                 case 'Africa':
                     targetOrbit = '5deg 100deg';
-                    targetFov = '20deg'; // Adjust these values for zoom
+                    targetFov = '15deg'; // Adjust these values for zoom
                     break;
                 case 'North America':
                     targetOrbit = '-100deg 40deg';
-                    targetFov = '25deg'; // Adjust these values for zoom
+                    targetFov = '15deg'; // Adjust these values for zoom
                     break;
                 case 'South America':
                     targetOrbit = '-80deg 105deg';
@@ -185,11 +185,11 @@
                     break;
                 case 'Europe':
                     targetOrbit = '20deg 50deg';
-                    targetFov = '40deg'; // Adjust these values for zoom
+                    targetFov = '31.5deg'; // Adjust these values for zoom
                     break;
                 case 'Australia':
                     targetOrbit = '120deg 115deg';
-                    targetFov = '40deg'; // Adjust these values for zoom
+                    targetFov = '31.5deg'; // Adjust these values for zoom
                     break;
             }
 
