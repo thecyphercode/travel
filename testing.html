@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: url('img/globeBgImg.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+        .country-list {
+            width: 30%;
+            color: transparent;
+            background: linear-gradient(to top right, #00000050, transparent);
+            border-right: 2px solid #a22626;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .country-list h2 {
+            font-size: 35px;
+            color: #fff;
+        }
+        .country-list li {
+            padding: 0;
+            list-style-type: circle;
+            line-height: 4.2rem;
+            margin-left: 40px;
+            cursor: pointer;
+            color: rgb(1, 1, 1); /* Country list color */
+            font-size: 40px; /* Set the font size for the list items */
+            font-family: 'Verdana', sans-serif; /* Set the font family for the list items */
+            font-weight: normal; /* Set the font weight for the list items */
+            text-transform: capitalize; /* Set the text transform for the list items */
+        }
+        .country-list li:hover {
+            list-style-type: none;
+            margin-left: -10px;
+            padding-left: 34px;
+            border-radius: 0px 15px 15px 0;
+            background: linear-gradient(90deg, #F4b400,#643600);
+            background-size: 400% 400%;
+            animation: backgroundMove 7s infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes backgroundMove {
+            0% {
+                background-position: 15% 65%;
+            }
+            20% {
+                background-position: 100% 75%;
+            }
+            40% {
+                background-position: 50% 25%;
+            }
+            60% {
+                background-position: 75% 50%;
+            }
+            80% { 
+                background-position: 25% 75%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        model-viewer {
+            width: 70%;
+            height: 100%;
+            background-color: transparent; /* Add background color here */
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                justify-content: center; /* Horizontally center */
+                align-items: center;     /* Vertically center */  
+                display: flex;
+                flex-direction: column;
+            }
+            .country-list h2 {
+                background: radial-gradient(circle, #ffffffdd, #ffffff99); /* Change these colors to your preference */
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-left: 20px;
+                font-size: 26px;
+            }
+            .country-list {
+                padding: 0px;
+                width: 100%;
+                height: 600px;
+                border-right: none;
+                background: #00000030;
+            }
+            .country-list ul {
+                display: contents;
+                flex-wrap: wrap;
+                justify-content: center; /* Horizontally center */
+                align-items: center;     /* Vertically center */
+            }
+            .country-list li {
+                line-height: 2.2rem;
+                margin-left: 40px;
+                font-size: 18px;
+            }
+            .country-list li:hover {
+                font-size: 22px;
+                margin-left: -10px;
+                width: 250px;
+                padding-left: 44px;
+                border-radius: 0px 15px 15px 0;
+                background: linear-gradient(90deg, #F4b400, #643600); /* Hover background gradient */
+                color: #fff; /* White text color for visibility */
+                -webkit-background-clip: border-box; /* Ensure background applies to the whole element */
+                -webkit-text-fill-color: #fff; /* Text color on hover */
+            }
+            model-viewer {
+                width: 100%;
+                height: 100%;
+                background: #00000030;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="country-list">
+            <h2>Choose Your Destination</h2>
+            <ul>
+                <li onclick="rotateGlobeToContinent('Asia')">Asia</li>
+                <li onclick="rotateGlobeToContinent('Africa')">Africa</li>
+                <li onclick="rotateGlobeToContinent('North America')">North America</li>
+                <li onclick="rotateGlobeToContinent('South America')">South America</li>
+                <li onclick="rotateGlobeToContinent('Antarctica')">Antarctica</li>
+                <li onclick="rotateGlobeToContinent('Europe')">Europe</li>
+                <li onclick="rotateGlobeToContinent('Australia')">Australia</li>
+            </ul>
+        </div>
+       
+        <model-viewer id="globe" src="3dModel/earth_globe4mb.glb" alt="Earth 3D model" 
+            scale="1 1 1"
+            shadow-intensity=".5"
+            field-of-view="10deg"
+            min-camera-orbit="auto -100deg"
+            max-camera-orbit="auto 290deg">
+        </model-viewer>
+    </div>
+   
+    <script>
+        async function rotateGlobeToContinent(continent) {
+            const globe = document.getElementById('globe');
+            const defaultOrbit = '0deg 0deg'; 
+            let targetOrbit = '';
+            let targetFov = '10deg'; // Default field of view
+
+            switch (continent) {
+                case 'Asia':
+                    targetOrbit = '65deg 60deg';
+                    targetFov = '25deg'; // Adjust these values for zoom
+                    break;
+                case 'Africa':
+                    targetOrbit = '5deg 100deg';
+                    targetFov = '20deg'; // Adjust these values for zoom
+                    break;
+                case 'North America':
+                    targetOrbit = '-100deg 40deg';
+                    targetFov = '25deg'; // Adjust these values for zoom
+                    break;
+                case 'South America':
+                    targetOrbit = '-80deg 105deg';
+                    targetFov = '15deg'; // Adjust these values for zoom
+                    break;
+                case 'Antarctica':
+                    targetOrbit = '0deg 280deg';
+                    targetFov = '30deg'; // Adjust these values for zoom
+                    break;
+                case 'Europe':
+                    targetOrbit = '20deg 50deg';
+                    targetFov = '40deg'; // Adjust these values for zoom
+                    break;
+                case 'Australia':
+                    targetOrbit = '120deg 115deg';
+                    targetFov = '40deg'; // Adjust these values for zoom
+                    break;
+            }
+
+            globe.setAttribute('camera-orbit', defaultOrbit);
+            globe.setAttribute('field-of-view', '30deg'); // Reset to default FOV
+            await globe.updateComplete;
+            globe.setAttribute('camera-orbit', targetOrbit);
+            globe.setAttribute('field-of-view', targetFov); // Set new FOV for zoom
+        }
+    </script>
+</body>
+</html>
