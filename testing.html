@@ -8,7 +8,7 @@
         body {
             margin: 0;
             height: 100vh;
-            background: url('imagees/globeBgImg.jpg') no-repeat center center fixed;
+            background: url('img/globeBgImg.jpg') no-repeat center center fixed;
             background-size: cover;
         }
         .container {
@@ -30,20 +30,19 @@
         }
         .country-list li {
             padding: 0;
-            list-style-type: circle;
-            line-height: 4.2rem;
+            list-style-type: none;
+            line-height: 3.8rem;
             margin-left: 40px;
             cursor: pointer;
-            color: rgb(1, 1, 1); /* Country list color */
-            font-size: 40px; /* Set the font size for the list items */
+            color: white; /* Country list color */
+            font-size: 30px; /* Set the font size for the list items */
             font-family: 'Verdana', sans-serif; /* Set the font family for the list items */
             font-weight: normal; /* Set the font weight for the list items */
             text-transform: capitalize; /* Set the text transform for the list items */
         }
         .country-list li:hover {
             list-style-type: none;
-            margin-left: -10px;
-            padding-left: 34px;
+            margin-left: 40px;
             border-radius: 0px 15px 15px 0;
             background: linear-gradient(90deg, #F4b400,#643600);
             background-size: 400% 400%;
@@ -85,6 +84,7 @@
                 align-items: center;     /* Vertically center */  
                 display: flex;
                 flex-direction: column;
+                height: 100%;
             }
             .country-list h2 {
                 background: radial-gradient(circle, #ffffffdd, #ffffff99); /* Change these colors to your preference */
@@ -92,11 +92,12 @@
                 -webkit-text-fill-color: transparent;
                 margin-left: 20px;
                 font-size: 26px;
+                margin-bottom: 8px;
             }
             .country-list {
                 padding: 0px;
                 width: 100%;
-                height: 600px;
+                height: 510px;
                 border-right: none;
                 background: #00000030;
             }
@@ -108,14 +109,15 @@
             }
             .country-list li {
                 line-height: 2.2rem;
-                margin-left: 40px;
-                font-size: 18px;
+                margin-left: 30px;
+                font-size: 14px;
+                color: white;
             }
             .country-list li:hover {
                 font-size: 22px;
                 margin-left: -10px;
                 width: 250px;
-                padding-left: 44px;
+                padding-left: 34px;
                 border-radius: 0px 15px 15px 0;
                 background: linear-gradient(90deg, #F4b400, #643600); /* Hover background gradient */
                 color: #fff; /* White text color for visibility */
@@ -124,8 +126,8 @@
             }
             model-viewer {
                 width: 100%;
-                height: 100%;
-                background: #00000030;
+                height: 100%; /* Adjust height to accommodate top and bottom padding */
+                background: #00000030;    
             }
         }
         
@@ -146,12 +148,13 @@
             </ul>
         </div>
        
-        <model-viewer id="globe" src="imagees/earth_globe4mb.glb" alt="Earth 3D model" 
+        <model-viewer id="globe" src="3dModel/earth_globe4mb.glb" alt="Earth 3D model" 
             scale="1 1 1"
             shadow-intensity=".5"
             field-of-view="08deg"
-            min-camera-orbit="auto -290deg"
-            max-camera-orbit="auto 290deg">
+            min-camera-orbit="auto -390deg"
+            max-camera-orbit="auto 390deg"
+            interpolation-decay="300">
         </model-viewer>
     </div>
    
@@ -164,8 +167,8 @@
 
             switch (continent) {
                 case 'Asia':
-                    targetOrbit = '65deg 60deg';
-                    targetFov = '15deg'; // Adjust these values for zoom
+                    targetOrbit = '65deg 70deg';
+                    targetFov = '31.5deg'; // Adjust these values for zoom
                     break;
                 case 'Africa':
                     targetOrbit = '5deg 100deg';
@@ -180,7 +183,7 @@
                     targetFov = '15deg'; // Adjust these values for zoom
                     break;
                 case 'Antarctica':
-                    targetOrbit = '0deg 280deg';
+                    targetOrbit = '0deg 350deg';
                     targetFov = '30deg'; // Adjust these values for zoom
                     break;
                 case 'Europe':
